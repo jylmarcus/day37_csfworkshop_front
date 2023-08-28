@@ -19,7 +19,11 @@ export class PostService {
     return firstValueFrom(this.http.post<any>('api/post', data))
   }
 
-  getPostById(postId: string) {
-    return firstValueFrom(this.http.get<any>(`api/${postId}`))
+  getPostImageById(postId: string) {
+    return firstValueFrom(this.http.get<any>(`api/image/${postId}`))
+  }
+
+  getPostCommmentById(postId: string) {
+    return firstValueFrom(this.http.get<any>(`api/comments/${postId}`))
   }
 }

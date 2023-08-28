@@ -5,7 +5,7 @@ import { PostDisplayComponent } from './components/post-display/post-display.com
 
 const routes: Routes = [
   {path: '', component: PostFormComponent},
-  {path: 'api/:id', component: PostDisplayComponent}
+  {path: 'post/:id', component: PostDisplayComponent}
 ];
 
 @NgModule({

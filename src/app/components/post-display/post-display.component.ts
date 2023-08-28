@@ -14,15 +14,20 @@ export class PostDisplayComponent implements OnInit{
 
   postId = ""
   comments = ""
-  base64ImageString = ""
+  //base64ImageString = ""
+  imgUrl = ""
 
   ngOnInit(): void {
     this.postId = this.activatedRoute.snapshot.params['id']
-    this.postSvc.getPostById(this.postId)
+    this.postSvc.getPostImageById(this.postId)
+      .then(result => {
+        this.imgUrl = result['image']
+        console.log(result['image'])
+      })
+    this.postSvc.getPostCommmentById(this.postId)
       .then(result => {
         this.comments = result['comments']
-        this.base64ImageString = result['image']
-        console.log(result['image'])
+        console.log(result['comments'])
       })
   }
 }
