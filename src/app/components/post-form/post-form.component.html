@@ -1,0 +1,9 @@
+<form [formGroup] = "form" (submit)="submitPost()">
+  <div>
+    Comment: <input type="text" name="" formControlName="comment">
+  </div>
+  <div>
+    Image: <input type="file" #imageUpload>
+  </div>
+  <button type="submit">Submit</button>
+</form>
